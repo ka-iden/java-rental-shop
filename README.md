@@ -2,23 +2,10 @@
 
 Collaborative project for AD006, intended to fill in for missing Intro to Programming A.
 
+## Sources
+
+To maintain academic integrity, we will document all sources used in this project. This includes any code snippets, libraries, or frameworks that we reference or use in our project. We will also provide links to their respective licenses and attributions where applicable. The sources can be found in the [sources.md](sources.md) file.
+
 ## Copyright
 
-© Luong Nguyen Au Truong and Kaiden Christopher Bird 2025. All Rights Reserved.
-
-Permission is hereby granted, free of charge, to the Royal Melbourne Institute of Technology
-to deal in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+This project is licensed under a modified version of the MIT License. See the [LICENSE](LICENSE) file for details.
