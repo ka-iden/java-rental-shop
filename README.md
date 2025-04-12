@@ -1,7 +1,9 @@
 # java-rental-shop
+
 Collaborative project for AD006, intended to fill in for missing Intro to Programming A.
 
 ## Copyright
+
 © Luong Nguyen Au Truong and Kaiden Christopher Bird 2025. All Rights Reserved.
 
 Permission is hereby granted, free of charge, to the Royal Melbourne Institute of Technology
