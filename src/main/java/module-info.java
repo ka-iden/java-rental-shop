@@ -1,4 +1,4 @@
-module java.rental.shop {
+module io.github.it_is_final.java_rental_shop {
     requires javafx.controls;
     requires javafx.graphics;
     requires javafx.fxml;
