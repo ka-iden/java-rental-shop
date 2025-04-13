@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.ImageView?>
 
+<?import javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml" prefWidth="640.0" prefHeight="480.0" fx:controller="io.github.it_is_final.java_rental_shop.Controller">
     <children>
         <VBox spacing="12" AnchorPane.topAnchor="12.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.bottomAnchor="12.0">
@@ -41,7 +38,11 @@
                         <Label text="Your Cart"/>
                         <Region HBox.hgrow="ALWAYS"/>
                         <Label text="Quantity:"/>
-                        <TextField fx:id="quantityField" prefWidth="35" text="1" onKeyTyped="#checkQuantityInput"/>
+                        <Spinner fx:id="quantityField" prefWidth="100">
+                            <valueFactory>
+                                <SpinnerValueFactory.IntegerSpinnerValueFactory min="0" initialValue="0"/>
+                            </valueFactory>
+                        </Spinner>
                     </HBox>
 
                     <!-- Cart Items -->

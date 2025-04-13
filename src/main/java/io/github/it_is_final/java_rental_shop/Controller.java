@@ -1,10 +1,8 @@
 package io.github.it_is_final.java_rental_shop;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
+import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.Image;
 
@@ -22,6 +20,8 @@ public class Controller {
         Alert alert = new Alert(AlertType.INFORMATION, wText, ButtonType.OK);
         alert.showAndWait();
     }
+    @FXML
+    private Spinner quantityField;
 
     @FXML
     private ImageView rmitLogoView;
@@ -34,19 +34,9 @@ public class Controller {
                 )
         );
         rmitLogoView.setImage(rmitLogo);
+
+        SpinnerValueFactory.IntegerSpinnerValueFactory quantityVf =
+                (SpinnerValueFactory.IntegerSpinnerValueFactory)quantityField.getValueFactory();
+        quantityVf.setMax(Integer.MAX_VALUE);
     }
-
-    @FXML
-    private TextField quantityField;
-
-    @FXML
-    protected void checkQuantityInput() {
-        String sQuantity = quantityField.textProperty().get();
-        try {
-            Integer.parseInt(sQuantity);
-        } catch (NumberFormatException e) {
-            quantityField.textProperty().set("");
-        }
-    };
-
 }
