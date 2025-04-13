@@ -13,7 +13,7 @@
     <children>
         <VBox spacing="12" AnchorPane.topAnchor="12.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.bottomAnchor="12.0">
             <!-- Top Row: Search and Bookshop Title -->
-            <HBox spacing="12" alignment="CENTER_LEFT">
+            <HBox spacing="8" alignment="CENTER_LEFT">
                 <Label text="Search for Videos"/>
                 <TextField fx:id="searchField" prefWidth="160"/>
                 <Button text="Search" onAction="#onSearchButtonClick"/>
@@ -27,14 +27,14 @@
             </HBox>
 
             <!-- Main Area -->
-            <HBox spacing="12" VBox.vgrow="ALWAYS">
+            <HBox spacing="8" VBox.vgrow="ALWAYS">
                 <!-- Left Pane -->
                 <VBox spacing="12" HBox.hgrow="ALWAYS">
                     <!-- Book List -->
-                    <ListView fx:id="bookListView" prefHeight="90"/>
+                    <ListView fx:id="bookListView"/>
 
                     <!-- Cart Header -->
-                    <HBox spacing="12">
+                    <HBox spacing="8">
                         <Label text="Your Cart"/>
                         <Region HBox.hgrow="ALWAYS"/>
                         <Label text="Quantity:"/>
@@ -46,26 +46,28 @@
                     </HBox>
 
                     <!-- Cart Items -->
-                    <ListView fx:id="cartListView" prefHeight="80"/>
-                    <HBox spacing="12" VBox.vgrow="ALWAYS">
+                    <ListView fx:id="cartListView"/>
+
+                    <!-- Receipt Area -->
+                    <HBox spacing="8">
                         <!-- Buttons on the left with fixed size -->
-                        <VBox spacing="12" alignment="TOP_LEFT" HBox.hgrow="NEVER" minWidth="120" prefWidth="120" maxWidth="120">
-                            <Button text="Add to Cart" fx:id="addToCartButton" prefWidth="120" maxWidth="120" onAction="#onAddToCartButtonClick"/>
-                            <Button text="Remove from Cart" fx:id="removeFromCartButton" prefWidth="120" maxWidth="120" onAction="#onRemoveFromCartButtonClick"/>
+                        <VBox spacing="12" alignment="TOP_LEFT">
+                            <Button text="Add to Cart" fx:id="addToCartButton" minWidth="120" onAction="#onAddToCartButtonClick"/>
+                            <Button text="Remove from Cart" fx:id="removeFromCartButton" minWidth="120" onAction="#onRemoveFromCartButtonClick"/>
                         </VBox>
-                        <!-- Receipt area -->
-                        <TextArea fx:id="receiptArea" text="Receipt will be displayed here." VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS" prefHeight="150" editable="false"/>
+                        <!-- Receipt -->
+                        <TextArea fx:id="receiptArea" text="Receipt will be displayed here." HBox.hgrow="ALWAYS" minHeight="150" editable="false"/>
                     </HBox>
                 </VBox>
 
                 <!-- Right Pane -->
-                <VBox spacing="12" prefWidth="120" minWidth="120" maxWidth="120" alignment="TOP_RIGHT">
+                <VBox spacing="12" prefWidth="130" minWidth="130" maxWidth="130" alignment="TOP_RIGHT">
                     <Region VBox.vgrow="ALWAYS"/>
                     <!-- Bottom Controls -->
                     <VBox spacing="12" alignment="BOTTOM_RIGHT">
                         <CheckBox text="Are you a member?" fx:id="membershipCheckbox"/>
-                        <Button text="Rent Videos" fx:id="rentVideosButton" prefWidth="120" onAction="#updateReceipt"/>
-                        <Button text="Save Receipt" fx:id="saveReceiptButton" prefWidth="120" onAction="#onHelloButtonClick"/>
+                        <Button text="Rent Videos" fx:id="rentVideosButton" prefWidth="130" onAction="#updateReceipt"/>
+                        <Button text="Save Receipt" fx:id="saveReceiptButton" prefWidth="130" onAction="#onHelloButtonClick"/>
                         <Label fx:id="totalLabel" text="Total: $0" style="-fx-font-size: 14px;"/>
                     </VBox>
                 </VBox>

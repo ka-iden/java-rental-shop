@@ -160,7 +160,7 @@ public class Controller {
         if (membershipCheckbox.isSelected()) {
             totalCost *= 0.9;
             receiptContent.append("Congratulations, you have received a discount!\n"
-                + "As a member of the RMIT Video Store, you get 10% off!\n"
+                + "As a member of the RMIT Video Rental, you get 10% off!\n"
                 + "Discount: -$").append(String.format("%.2f", totalCost * 0.1)).append("\n");
         }
 
