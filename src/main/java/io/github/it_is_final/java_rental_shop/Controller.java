@@ -34,6 +34,15 @@ public class Controller {
     private ImageView rmitLogoView;
 
     @FXML
+    private TextArea receiptArea;
+
+    @FXML
+    private Label totalLabel;
+
+    @FXML
+    private CheckBox membershipCheckbox;
+
+    @FXML
     protected void initialize() {
         // Load books from XML file
         try {
@@ -112,6 +121,56 @@ public class Controller {
 
         // Remove the selected item from the cart
         cartItems.remove(selectedCartItem);
+    }
+
+    @FXML
+    protected void updateReceipt() {
+        // Clear the receipt area
+        receiptArea.clear();
+
+        // Calculate the total cost
+        double totalCost = 0.0;
+
+        // Build the receipt content
+        StringBuilder receiptContent = new StringBuilder();
+        for (String item : cartItems) {
+            receiptContent.append(item).append("\n");
+
+            // Extract the price and quantity from the cart item string
+            String[] parts = item.split("\\(x");
+            if (parts.length == 2) {
+                String pricePart = parts[0].substring(parts[0].lastIndexOf("$") + 1).trim();
+                String quantityPart = parts[1].replace(")", "").trim();
+
+                try {
+                    double price = Double.parseDouble(pricePart);
+                    int quantity = Integer.parseInt(quantityPart);
+                    totalCost += price * quantity;
+                } catch (NumberFormatException e) {
+                    // Handle parsing errors gracefully
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        // Add the subtotal to the receipt content
+        receiptContent.append("Subtotal: $").append(String.format("%.2f", totalCost)).append("\n");
+
+        // Apply a 10% discount if the checkbox is checked
+        if (membershipCheckbox.isSelected()) {
+            totalCost *= 0.9;
+            receiptContent.append("Congratulations, you have received a discount!\n"
+                + "As a member of the RMIT Video Store, you get 10% off!\n"
+                + "Discount: -$").append(String.format("%.2f", totalCost * 0.1)).append("\n");
+        }
+
+        // Add the total cost to the receipt content
+        receiptContent.append("Total Cost: $").append(String.format("%.2f", totalCost)).append("\n");
+        // Update the receipt area
+        receiptArea.setText(receiptContent.toString());
+
+        // Update the total label
+        totalLabel.setText(String.format("Total: $%.2f", totalCost));
     }
 
     @FXML

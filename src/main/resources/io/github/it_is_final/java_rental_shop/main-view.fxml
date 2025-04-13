@@ -64,7 +64,7 @@
                     <!-- Bottom Controls -->
                     <VBox spacing="12" alignment="BOTTOM_RIGHT">
                         <CheckBox text="Are you a member?" fx:id="membershipCheckbox"/>
-                        <Button text="Rent Videos" fx:id="rentVideosButton" prefWidth="160" onAction="#onHelloButtonClick"/>
+                        <Button text="Rent Videos" fx:id="rentVideosButton" prefWidth="160" onAction="#updateReceipt"/>
                         <Button text="Save Receipt" fx:id="saveReceiptButton" prefWidth="160" onAction="#onHelloButtonClick"/>
                         <Label fx:id="totalLabel" text="Total: $0" style="-fx-font-size: 14px;"/>
                     </VBox>
