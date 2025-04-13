@@ -7,7 +7,10 @@ import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.Image;
+import javafx.stage.FileChooser;
 
+import java.io.File;
+import java.io.PrintWriter;
 import java.util.Map;
 import java.util.Objects;
 
@@ -104,7 +107,27 @@ public class Controller {
             return;
         }
 
-        // Add the selected book and quantity to the cart
+        // Check if the selected book already exists in the cart
+        for (int i = 0; i < cartItems.size(); i++) {
+            String cartItem = cartItems.get(i);
+            if (cartItem.startsWith(selectedBook)) {
+                // Extract the current quantity
+                String[] parts = cartItem.split("\\(x");
+                String quantityPart = parts[1].replace(")", "").trim();
+                try {
+                    int currentQuantity = Integer.parseInt(quantityPart);
+                    int newQuantity = currentQuantity + quantity;
+
+                    // Update the cart item with the new quantity
+                    cartItems.set(i, selectedBook + " (x" + newQuantity + ")");
+                    return; // Exit after updating
+                } catch (NumberFormatException e) {
+                    throw new RuntimeException("Failed to parse quantity: " + e.getMessage());
+                }
+            }
+        }
+
+        // If the book is not already in the cart, add it as a new item
         cartItems.add(selectedBook + " (x" + quantity + ")");
     }
 
@@ -124,7 +147,7 @@ public class Controller {
     }
 
     @FXML
-    protected void updateReceipt() {
+    protected void onRentVideoButtonClick() {
         // Clear the receipt area
         receiptArea.clear();
 
@@ -147,8 +170,7 @@ public class Controller {
                     int quantity = Integer.parseInt(quantityPart);
                     totalCost += price * quantity;
                 } catch (NumberFormatException e) {
-                    // Handle parsing errors gracefully
-                    e.printStackTrace();
+                    throw new RuntimeException("Failed to parse price or quantity: " + e.getMessage());
                 }
             }
         }
@@ -174,13 +196,26 @@ public class Controller {
     }
 
     @FXML
-    protected void onHelloButtonClick() {
-        String wText = String.format(
-            "Welcome to JavaFX %s! Running on Java %s.",
-            System.getProperty("javafx.version"),
-            System.getProperty("java.version")
-         );
-        Alert alert = new Alert(AlertType.INFORMATION, wText, ButtonType.OK);
-        alert.showAndWait();
+    protected void onSaveReceiptButtonClick() {
+        onRentVideoButtonClick(); // Ensure the receipt is generated before saving
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save Receipt");
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
+
+        // Show the save dialog
+        File file = fileChooser.showSaveDialog(receiptArea.getScene().getWindow());
+
+        if (file != null) {
+            try (PrintWriter writer = new PrintWriter(file)) {
+                // Write the content of the receipt area to the file
+                writer.write(receiptArea.getText());
+                Alert alert = new Alert(AlertType.INFORMATION, "Receipt saved successfully!", ButtonType.OK);
+                alert.setTitle("Success");
+                alert.showAndWait();
+            } catch (Exception e) {
+                throw new RuntimeException("Failed to save receipt: " + e.getMessage());
+            }
+        }
     }
 }

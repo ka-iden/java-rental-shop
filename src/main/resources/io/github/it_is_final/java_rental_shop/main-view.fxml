@@ -56,7 +56,7 @@
                             <Button text="Remove from Cart" fx:id="removeFromCartButton" minWidth="120" onAction="#onRemoveFromCartButtonClick"/>
                         </VBox>
                         <!-- Receipt -->
-                        <TextArea fx:id="receiptArea" text="Receipt will be displayed here." HBox.hgrow="ALWAYS" minHeight="150" editable="false"/>
+                        <TextArea text="Receipt will be displayed here." fx:id="receiptArea" HBox.hgrow="ALWAYS" minHeight="150" editable="false"/>
                     </HBox>
                 </VBox>
 
@@ -66,9 +66,9 @@
                     <!-- Bottom Controls -->
                     <VBox spacing="12" alignment="BOTTOM_RIGHT">
                         <CheckBox text="Are you a member?" fx:id="membershipCheckbox"/>
-                        <Button text="Rent Videos" fx:id="rentVideosButton" prefWidth="130" onAction="#updateReceipt"/>
-                        <Button text="Save Receipt" fx:id="saveReceiptButton" prefWidth="130" onAction="#onHelloButtonClick"/>
-                        <Label fx:id="totalLabel" text="Total: $0" style="-fx-font-size: 14px;"/>
+                        <Button text="Rent Videos" fx:id="rentVideosButton" prefWidth="130" onAction="#onRentVideoButtonClick"/>
+                        <Button text="Save Receipt" fx:id="saveReceiptButton" prefWidth="130" onAction="#onSaveReceiptButtonClick"/>
+                        <Label text="Total: $0.00" fx:id="totalLabel" style="-fx-font-size: 14px;"/>
                     </VBox>
                 </VBox>
             </HBox>
