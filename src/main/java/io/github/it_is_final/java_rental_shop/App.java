@@ -10,15 +10,11 @@ import java.io.IOException;
 public class App extends Application {
 
     @Override
-    public void start(Stage stage) {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("fxml-test-view.fxml"));
+    public void start(Stage stage) throws Exception {
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("main-view.fxml"));
         Scene scene;
-        try {
-            scene = new Scene(fxmlLoader.load(), 640, 480);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        stage.setTitle("Test");
+        scene = new Scene(fxmlLoader.load(), 640, 480);
+        stage.setTitle("RMIT Video Rental");
         stage.setScene(scene);
         stage.show();
     }

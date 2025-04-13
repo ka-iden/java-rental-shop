@@ -6,6 +6,8 @@
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -19,7 +21,8 @@
                 <TextField fx:id="searchField" prefWidth="160"/>
                 <Button text="Search" onAction="#onHelloButtonClick"/>
                 <Region HBox.hgrow="ALWAYS"/>
-                <Label text="RMIT Bookshop" textFill="blue">
+                <ImageView fx:id="rmitLogoView" fitWidth="100" preserveRatio="true"/>
+                <Label text="Video Rental" textFill="red">
                     <font>
                         <Font size="20"/>
                     </font>
@@ -40,7 +43,7 @@
                         <Label text="Your Cart"/>
                         <Region HBox.hgrow="ALWAYS"/>
                         <Label text="Quantity:"/>
-                        <TextField fx:id="quantityField" prefWidth="35" text="1"/>
+                        <TextField fx:id="quantityField" prefWidth="35" text="1" onKeyTyped="#checkQuantityInput"/>
                     </HBox>
 
                     <!-- Cart Items -->
