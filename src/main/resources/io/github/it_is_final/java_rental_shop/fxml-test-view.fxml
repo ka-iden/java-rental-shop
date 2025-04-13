@@ -3,15 +3,21 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml" prefWidth="640.0" prefHeight="480.0">
+<AnchorPane xmlns:fx="http://javafx.com/fxml" prefWidth="640.0" prefHeight="480.0" fx:controller="io.github.it_is_final.java_rental_shop.Controller">
     <children>
         <VBox spacing="12" AnchorPane.topAnchor="12.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.bottomAnchor="12.0">
             <!-- Top Row: Search and Bookshop Title -->
             <HBox spacing="12" alignment="CENTER_LEFT">
                 <Label text="Search for Videos"/>
                 <TextField fx:id="searchField" prefWidth="160"/>
-                <Button text="Search"/>
+                <Button text="Search" onAction="#onHelloButtonClick"/>
                 <Region HBox.hgrow="ALWAYS"/>
                 <Label text="RMIT Bookshop" textFill="blue">
                     <font>
@@ -45,8 +51,8 @@
 
                         <!-- Buttons on the left -->
                         <VBox spacing="12" alignment="TOP_LEFT">
-                            <Button text="Add to Cart" fx:id="addToCartButton" prefWidth="320"/>
-                            <Button text="Remove from Cart" fx:id="removeFromCartButton" prefWidth="320"/>
+                            <Button text="Add to Cart" fx:id="addToCartButton" prefWidth="320" onAction="#onHelloButtonClick"/>
+                            <Button text="Remove from Cart" fx:id="removeFromCartButton" prefWidth="320" onAction="#onHelloButtonClick"/>
                         </VBox>
 
                         <!-- Receipt area expands -->
@@ -63,8 +69,8 @@
                     <!-- Bottom Controls -->
                     <VBox spacing="12" alignment="BOTTOM_RIGHT">
                         <CheckBox text="Are you a member?" fx:id="membershipCheckbox"/>
-                        <Button text="Rent Videos" fx:id="rentVideosButton" prefWidth="160"/>
-                        <Button text="Save Receipt" fx:id="saveReceiptButton" prefWidth="160"/>
+                        <Button text="Rent Videos" fx:id="rentVideosButton" prefWidth="160" onAction="#onHelloButtonClick"/>
+                        <Button text="Save Receipt" fx:id="saveReceiptButton" prefWidth="160" onAction="#onHelloButtonClick"/>
                         <Label fx:id="totalLabel" text="Total: $0" style="-fx-font-size: 14px;"/>
                     </VBox>
 
