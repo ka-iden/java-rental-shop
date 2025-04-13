@@ -28,10 +28,8 @@
 
             <!-- Main Area -->
             <HBox spacing="12" VBox.vgrow="ALWAYS">
-
                 <!-- Left Pane -->
                 <VBox spacing="12" HBox.hgrow="ALWAYS">
-
                     <!-- Book List -->
                     <ListView fx:id="bookListView" prefHeight="90"/>
 
@@ -45,27 +43,20 @@
 
                     <!-- Cart Items -->
                     <ListView fx:id="cartListView" prefHeight="80"/>
-
-                    <!-- Cart Buttons + Receipt Side-by-Side -->
                     <HBox spacing="12" VBox.vgrow="ALWAYS">
-
-                        <!-- Buttons on the left -->
-                        <VBox spacing="12" alignment="TOP_LEFT">
-                            <Button text="Add to Cart" fx:id="addToCartButton" prefWidth="320" onAction="#onHelloButtonClick"/>
-                            <Button text="Remove from Cart" fx:id="removeFromCartButton" prefWidth="320" onAction="#onHelloButtonClick"/>
+                        <!-- Buttons on the left with fixed size -->
+                        <VBox spacing="12" alignment="TOP_LEFT" HBox.hgrow="NEVER" minWidth="150" prefWidth="150" maxWidth="150">
+                            <Button text="Add to Cart" fx:id="addToCartButton" prefWidth="150" maxWidth="150" onAction="#onHelloButtonClick"/>
+                            <Button text="Remove from Cart" fx:id="removeFromCartButton" prefWidth="150" maxWidth="150" onAction="#onHelloButtonClick"/>
                         </VBox>
-
-                        <!-- Receipt area expands -->
-                        <TextArea fx:id="receiptArea" text="Receipt will be displayed here." VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS"/>
+                        <!-- Receipt area -->
+                        <TextArea fx:id="receiptArea" text="Receipt will be displayed here." VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS" prefHeight="150"/>
                     </HBox>
-
                 </VBox>
 
                 <!-- Right Pane -->
                 <VBox spacing="12" prefWidth="180" minWidth="180" maxWidth="180" alignment="TOP_RIGHT">
-
                     <Region VBox.vgrow="ALWAYS"/>
-
                     <!-- Bottom Controls -->
                     <VBox spacing="12" alignment="BOTTOM_RIGHT">
                         <CheckBox text="Are you a member?" fx:id="membershipCheckbox"/>
@@ -73,7 +64,6 @@
                         <Button text="Save Receipt" fx:id="saveReceiptButton" prefWidth="160" onAction="#onHelloButtonClick"/>
                         <Label fx:id="totalLabel" text="Total: $0" style="-fx-font-size: 14px;"/>
                     </VBox>
-
                 </VBox>
             </HBox>
         </VBox>
