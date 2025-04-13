@@ -49,23 +49,23 @@
                     <ListView fx:id="cartListView" prefHeight="80"/>
                     <HBox spacing="12" VBox.vgrow="ALWAYS">
                         <!-- Buttons on the left with fixed size -->
-                        <VBox spacing="12" alignment="TOP_LEFT" HBox.hgrow="NEVER" minWidth="150" prefWidth="150" maxWidth="150">
-                            <Button text="Add to Cart" fx:id="addToCartButton" prefWidth="150" maxWidth="150" onAction="#onAddToCartButtonClick"/>
-                            <Button text="Remove from Cart" fx:id="removeFromCartButton" prefWidth="150" maxWidth="150" onAction="#onRemoveFromCartButtonClick"/>
+                        <VBox spacing="12" alignment="TOP_LEFT" HBox.hgrow="NEVER" minWidth="120" prefWidth="120" maxWidth="120">
+                            <Button text="Add to Cart" fx:id="addToCartButton" prefWidth="120" maxWidth="120" onAction="#onAddToCartButtonClick"/>
+                            <Button text="Remove from Cart" fx:id="removeFromCartButton" prefWidth="120" maxWidth="120" onAction="#onRemoveFromCartButtonClick"/>
                         </VBox>
                         <!-- Receipt area -->
-                        <TextArea fx:id="receiptArea" text="Receipt will be displayed here." VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS" prefHeight="150"/>
+                        <TextArea fx:id="receiptArea" text="Receipt will be displayed here." VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS" prefHeight="150" editable="false"/>
                     </HBox>
                 </VBox>
 
                 <!-- Right Pane -->
-                <VBox spacing="12" prefWidth="180" minWidth="180" maxWidth="180" alignment="TOP_RIGHT">
+                <VBox spacing="12" prefWidth="120" minWidth="120" maxWidth="120" alignment="TOP_RIGHT">
                     <Region VBox.vgrow="ALWAYS"/>
                     <!-- Bottom Controls -->
                     <VBox spacing="12" alignment="BOTTOM_RIGHT">
                         <CheckBox text="Are you a member?" fx:id="membershipCheckbox"/>
-                        <Button text="Rent Videos" fx:id="rentVideosButton" prefWidth="160" onAction="#updateReceipt"/>
-                        <Button text="Save Receipt" fx:id="saveReceiptButton" prefWidth="160" onAction="#onHelloButtonClick"/>
+                        <Button text="Rent Videos" fx:id="rentVideosButton" prefWidth="120" onAction="#updateReceipt"/>
+                        <Button text="Save Receipt" fx:id="saveReceiptButton" prefWidth="120" onAction="#onHelloButtonClick"/>
                         <Label fx:id="totalLabel" text="Total: $0" style="-fx-font-size: 14px;"/>
                     </VBox>
                 </VBox>
