@@ -16,7 +16,7 @@
             <HBox spacing="12" alignment="CENTER_LEFT">
                 <Label text="Search for Videos"/>
                 <TextField fx:id="searchField" prefWidth="160"/>
-                <Button text="Search" onAction="#onHelloButtonClick"/>
+                <Button text="Search" onAction="#onSearchButtonClick"/>
                 <Region HBox.hgrow="ALWAYS"/>
                 <ImageView fx:id="rmitLogoView" fitWidth="100" preserveRatio="true"/>
                 <Label text="Video Rental" textFill="red">
