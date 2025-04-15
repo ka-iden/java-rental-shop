@@ -4,6 +4,9 @@ import java.math.BigDecimal;
 import java.util.*;
 
 public class Cart {
+    // cart - Implemented as a hashMap with String keys
+    //        and CartEntry values, with the String keys
+    //        simply being the title of the video.
     private final Map<String, CartEntry> cart;
     public Cart() {
         cart = new HashMap<>();
@@ -22,14 +25,18 @@ public class Cart {
     }
 
     public BigDecimal getCartSubtotal() {
+        // Calculates the total cost at checkout
+        // before any discounts, surcharges etc.
         return cart
                 .values()
                 .stream()
-                .map((ce) -> ce.getVideo().price())
+                .map((CartEntry ce) -> ce.getVideo().price())
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 
     public BigDecimal getCartTotal(boolean hasDiscount) {
+        // Calculates total cost at checkout with discounts,
+        // surcharges etc. applied
         BigDecimal total = getCartSubtotal();
         int totalQuantity = cart
                 .values()
