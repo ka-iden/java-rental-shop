@@ -8,4 +8,4 @@ To maintain academic integrity, we will document all sources used in this projec
 
 ## Copyright
 
-This project is licensed under a modified version of the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed the MIT License. See the [LICENSE](LICENSE) file for details.
