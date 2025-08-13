@@ -1,0 +1,52 @@
+<books>
+    <book>
+        <title>To Kill a Mockingbird</title>
+        <author>Harper Lee</author>
+        <price>18.99</price>
+    </book>
+    <book>
+        <title>1984</title>
+        <author>George Orwell</author>
+        <price>15.99</price>
+    </book>
+    <book>
+        <title>The Great Gatsby</title>
+        <author>F. Scott Fitzgerald</author>
+        <price>14.99</price>
+    </book>
+    <book>
+        <title>Pride and Prejudice</title>
+        <author>Jane Austen</author>
+        <price>12.99</price>
+    </book>
+    <book>
+        <title>The Catcher in the Rye</title>
+        <author>J.D. Salinger</author>
+        <price>10.99</price>
+    </book>
+    <book>
+        <title>The Hobbit</title>
+        <author>J.R.R. Tolkien</author>
+        <price>22.99</price>
+    </book>
+    <book>
+        <title>Harry Potter and the Sorcerer's Stone</title>
+        <author>J.K. Rowling</author>
+        <price>24.99</price>
+    </book>
+    <book>
+        <title>The Lord of the Rings</title>
+        <author>J.R.R. Tolkien</author>
+        <price>35.99</price>
+    </book>
+    <book>
+        <title>The Chronicles of Narnia</title>
+        <author>C.S. Lewis</author>
+        <price>45.99</price>
+    </book>
+    <book>
+        <title>Animal Farm</title>
+        <author>George Orwell</author>
+        <price>9.99</price>
+    </book>
+</books>
